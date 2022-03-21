@@ -7,9 +7,11 @@ class Welcome extends React.Component {
 	}
 	render() {
 		const style = { margin: 0 }
-		return <h2 style={ style }>
-			Welcome, { this.state.name }
-		</h2>
+		return (
+			<h2 style={ style }>
+				Welcome, { this.state.name }
+			</h2>
+		)
 	}
 }
 
