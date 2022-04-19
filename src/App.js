@@ -1,7 +1,6 @@
 import Welcome from './Welcome/Welcome'
 import Car from './Car/Car';
-import './App.sass';
-import logo from './logo.svg';
+import classes from './App.module.sass';
 import React from "react";
 
 class App extends React.Component {
@@ -81,8 +80,8 @@ class App extends React.Component {
 		/>)
 
 		return (
-			<div className="App">
-				<header className="App-header">
+			<div className={ classes.App }>
+				<header className={ classes['App-header'] }>
 					<Welcome />
 
 					<form onSubmit={ this.onSubmitFormHandler } name="form">
@@ -95,7 +94,7 @@ class App extends React.Component {
 
 					{ selectedCars && <p><span style={{ fontWeight: 'bold' }}>Selected Cars: </span>{ selectedCars }</p> }
 
-					{ listCars && <div className="App-cars">{ listCars }</div> }
+					{ listCars && <div className={ classes['App-cars'] }>{ listCars }</div> }
 
 					<button onClick={ this.onClickClearSelectedCarsHandler } disabled={ !selectedCars.length }>Clear selected cars</button>
 				</header>

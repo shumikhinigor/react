@@ -1,5 +1,5 @@
 import React from 'react';
-import './Welcome.sass';
+import classes from './Welcome.module.sass';
 
 class Welcome extends React.Component {
 	constructor(props) {
@@ -8,7 +8,7 @@ class Welcome extends React.Component {
 	}
 	render() {
 		return (
-			<h2 className={ 'Welcome' }>
+			<h2 className={ classes.Welcome }>
 				Welcome, { this.state.name }
 			</h2>
 		)
