@@ -1,4 +1,5 @@
 import React from 'react';
+import Radium from "radium";
 import './Car.css'
 
 class Car extends React.Component {
@@ -13,11 +14,10 @@ class Car extends React.Component {
 	}
 
 	render() {
-		const hover = {
-			border: '1px solid red'
-		}
 		const carClasses = [ 'Car' ]
 		if (this.props.selected) carClasses.push('selected')
+		// Radium :hover
+		const hover = { ':hover': { boxShadow: '0px 3px 5px white' } }
 
 		return (
 			<div className={ carClasses.join(' ') } style={ hover }>
@@ -29,5 +29,7 @@ class Car extends React.Component {
 		)
 	}
 }
+
+Car = Radium(Car)
 
 export default Car
