@@ -7,7 +7,43 @@ body {
     -moz-osx-font-smoothing: grayscale;
 }
 
+* {
+    box-sizing: border-box;
+}
+
 code {
     font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
     monospace;
+}
+
+button {
+    background-color: red;
+    border: none;
+    color: white;
+    padding: 10px 20px;
+    text-align: center;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all .2s;
+    border-radius: 3px;
+}
+button:hover {
+    background-color: darkred;
+}
+button:disabled {
+    background-color: gray;
+    cursor: default;
+}
+
+form {
+    padding: 20px;
+    border-radius: 10px;
+    border: 1px solid white;
+}
+
+input {
+    border: 1px solid white;
+    border-radius: 3px;
+    padding: 5px;
+    outline: none;
 }

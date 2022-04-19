@@ -36,3 +36,7 @@
         transform: rotate(360deg);
     }
 }
+
+.cars {
+    margin: 20px 0;
+}
