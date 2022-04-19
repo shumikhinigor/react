@@ -1,6 +1,6 @@
 import React from 'react';
 import Radium from "radium";
-import './Car.css'
+import './Car.sass'
 
 class Car extends React.Component {
 	constructor(props) {
@@ -17,7 +17,7 @@ class Car extends React.Component {
 		const carClasses = [ 'Car' ]
 		if (this.props.selected) carClasses.push('selected')
 		// Radium :hover
-		const hover = { ':hover': { boxShadow: '0px 3px 5px white' } }
+		const hover = { ':hover': { boxShadow: this.props.selected ? '0px 3px 5px red' : '0px 3px 5px white' } }
 
 		return (
 			<div className={ carClasses.join(' ') } style={ hover }>

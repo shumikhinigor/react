@@ -1,6 +1,7 @@
 import Welcome from './Welcome/Welcome'
 import Car from './Car/Car';
-import './App.css';
+import './App.sass';
+import logo from './logo.svg';
 import React from "react";
 
 class App extends React.Component {
@@ -94,7 +95,7 @@ class App extends React.Component {
 
 					{ selectedCars && <p><span style={{ fontWeight: 'bold' }}>Selected Cars: </span>{ selectedCars }</p> }
 
-					{ listCars && <div className="cars">{ listCars }</div> }
+					{ listCars && <div className="App-cars">{ listCars }</div> }
 
 					<button onClick={ this.onClickClearSelectedCarsHandler } disabled={ !selectedCars.length }>Clear selected cars</button>
 				</header>
