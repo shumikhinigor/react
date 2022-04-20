@@ -88,13 +88,15 @@ class App extends Component {
 				<main className={ classes['App-main'] }>
 					<Welcome />
 
-					<form onSubmit={ this.onSubmitFormHandler } name="form">
-						<input type="text" name="name" required />
-						<br />
-						<input type="month" name="year" required />
-						<br />
-						<button type="submit">Add</button>
-					</form>
+					<div className={ classes['App-form'] }>
+						<form onSubmit={ this.onSubmitFormHandler } name="form">
+							<input type="text" name="name" required />
+							<br />
+							<input type="month" name="year" required />
+							<br />
+							<button type="submit">Add</button>
+						</form>
+					</div>
 
 					{ selectedCars && <p><span style={{ fontWeight: 'bold' }}>Selected Cars: </span>{ selectedCars }</p> }
 
