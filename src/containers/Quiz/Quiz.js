@@ -8,7 +8,7 @@ class Quiz extends Component {
 		super(props)
 		this.state = {
 			results: {}, // { [id]: 'success || error }
-			isFinished: false,
+			isFinished: true,
 			activeQuestions: 0,
 			answerState: null, // { [id]: 'success || error' }
 			quiz: [

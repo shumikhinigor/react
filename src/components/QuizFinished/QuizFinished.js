@@ -1,5 +1,6 @@
 import { Component } from 'react'
 import classes from './QuizFinished.module.sass'
+import Button from '../UI/Button/Button'
 
 class QuizFinished extends Component {
 	render() {
@@ -32,7 +33,8 @@ class QuizFinished extends Component {
 				<p>Correct { successCount } of { this.props.quiz.length }</p>
 
 				<div>
-					<button onClick={ this.props.onClickRepeat }>Repeat</button>
+					<Button type={ 'primary' } onClick={ this.props.onClickRepeat }>Repeat</Button>
+					<Button type={ 'success' }>Go to test list</Button>
 				</div>
 			</div>
 		)
