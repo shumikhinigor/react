@@ -81,7 +81,7 @@ class App extends Component {
 
 		return (
 			<div className={ classes.App }>
-				<header className={ classes['App-header'] }>
+				<main className={ classes['App-main'] }>
 					<Welcome />
 
 					<form onSubmit={ this.onSubmitFormHandler } name="form">
@@ -97,7 +97,7 @@ class App extends Component {
 					{ listCars && <div className={ classes['App-cars'] }>{ listCars }</div> }
 
 					<button onClick={ this.onClickClearSelectedCarsHandler } disabled={ !selectedCars.length }>Clear selected cars</button>
-				</header>
+				</main>
 			</div>
 		)
 	}
