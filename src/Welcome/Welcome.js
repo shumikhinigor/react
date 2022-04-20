@@ -1,4 +1,5 @@
 import { Component } from "react";
+import Auxiliary from "../HOC/Auxiliary";
 import classes from './Welcome.module.sass';
 
 class Welcome extends Component {
@@ -8,9 +9,11 @@ class Welcome extends Component {
 	}
 	render() {
 		return (
-			<h2 className={ classes.Welcome }>
-				Welcome, { this.state.name }
-			</h2>
+			<Auxiliary>
+				<h2 className={ classes.Welcome }>
+					Welcome, { this.state.name }
+				</h2>
+			</Auxiliary>
 		)
 	}
 }
