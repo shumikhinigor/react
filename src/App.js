@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import Car from './components/Car/Car';
 import Welcome from './components/Welcome/Welcome'
 import ErrorBoundary from './common/ErrorBoundary/ErrorBoundary';
@@ -29,6 +29,8 @@ class App extends Component {
 				}
 			]
 		}
+
+		this.inputRef = React.createRef()
 	}
 
 	onClickClearSelectedCarsHandler = () => {
@@ -61,11 +63,15 @@ class App extends Component {
 		cars.push({
 			id: cars.length + 1,
 			name,
-			year: year.match(/\d+((?=-))/)[0],
+			year: +year.match(/\d+((?=-))/)[0],
 			selected: false
 		})
 		this.setState({ cars })
 		clearForm()
+	}
+
+	componentDidMount() {
+		this.inputRef.current.focus()
 	}
 
 	render() {
@@ -90,7 +96,13 @@ class App extends Component {
 
 					<div className={ classes['App-form'] }>
 						<form onSubmit={ this.onSubmitFormHandler } name="form">
-							<input type="text" name="name" required />
+							<input
+								ref={ this.inputRef }
+								type="text"
+								name="name"
+								placeholder={ 'Car' }
+								required
+							/>
 							<br />
 							<input type="month" name="year" required />
 							<br />
