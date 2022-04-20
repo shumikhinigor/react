@@ -1,9 +1,9 @@
 import Welcome from './Welcome/Welcome'
 import Car from './Car/Car';
 import classes from './App.module.sass';
-import React from "react";
+import { Component } from "react";
 
-class App extends React.Component {
+class App extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {

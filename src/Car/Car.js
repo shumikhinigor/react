@@ -1,8 +1,8 @@
-import React from 'react';
+import { Component } from "react";
 import Radium from "radium";
 import classes from './Car.module.sass'
 
-class Car extends React.Component {
+class Car extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
@@ -21,7 +21,7 @@ class Car extends React.Component {
 
 		return (
 			<div className={ carClasses.join(' ') } style={ hover }>
-				<button className={ classes['Car-delete'] } type="button" onClick={ this.state.onDeleteCar }>&#10006;</button>
+				<button className={ classes['Car-delete'] } type="button" onClick={ this.state.onDeleteCar } />
 				<h3 className={ classes['Car-name'] }>Сar name: { this.state.name }</h3>
 				<p className={ classes['Car-year'] }>Year: <strong>{ this.state.year }</strong></p>
 				<button type="button" onClick={ this.state.onSelectCar }>Select</button>

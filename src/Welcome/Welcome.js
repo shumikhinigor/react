@@ -1,7 +1,7 @@
-import React from 'react';
+import { Component } from "react";
 import classes from './Welcome.module.sass';
 
-class Welcome extends React.Component {
+class Welcome extends Component {
 	constructor(props) {
 		super(props)
 		this.state = { name: props.name || 'Guest' }
