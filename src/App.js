@@ -98,9 +98,19 @@ class App extends Component {
 						</form>
 					</div>
 
-					{ selectedCars && <p><span style={{ fontWeight: 'bold' }}>Selected Cars: </span>{ selectedCars }</p> }
+					{ selectedCars &&
+						<div className={ classes['App-cars-selected'] }>
+							<p>
+								<span className={ classes['App-cars-selected__title'] }>Selected Cars: </span>{ selectedCars }
+							</p>
+						</div>
+					}
 
-					{ listCars && <div className={ classes['App-cars'] }>{ listCars }</div> }
+					{ listCars &&
+						<div className={ classes['App-cars'] }>
+							{ listCars }
+						</div>
+					}
 
 					<button onClick={ this.onClickClearSelectedCarsHandler } disabled={ !selectedCars.length }>Clear selected cars</button>
 				</main>
