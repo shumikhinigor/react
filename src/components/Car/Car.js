@@ -14,6 +14,7 @@ class Car extends Component {
 		}
 	}
 
+	// Lifecycle
 	static getDerivedStateFromProps(nextProps, prevState) {
 		console.log('getDerivedStateFromProps')
 		return prevState

@@ -33,6 +33,7 @@ class App extends Component {
 		this.inputRef = React.createRef()
 	}
 
+	// Methods
 	onClickClearSelectedCarsHandler = () => {
 		const cars = this.state.cars.map(car => {
 			car.selected = false
@@ -70,6 +71,7 @@ class App extends Component {
 		clearForm()
 	}
 
+	// Lifecycle
 	componentDidMount() {
 		this.inputRef.current.focus()
 	}
