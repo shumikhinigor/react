@@ -47,14 +47,14 @@ class Car extends Component {
 		const carClasses = [ classes.Car ]
 		if (this.props.selected) carClasses.push(classes['Car-selected'])
 		// Radium :hover
-		const hover = { ':hover': { boxShadow: this.props.selected ? '0px 3px 5px red' : '0px 3px 5px white' } }
+		const hover = { ':hover': { boxShadow: this.props.selected ? '0px 3px 5px #61DAFB' : '0px 3px 5px white' } }
 
 		return (
 			<div className={ carClasses.join(' ') } style={ hover }>
 				<button className={ classes['Car-delete'] } type="button" onClick={ this.state.onDeleteCar } />
-				<h3 className={ classes['Car-name'] }>Сar name: { this.state.name }</h3>
+				<p className={ classes['Car-name'] }>Сar name: <strong>{ this.state.name }</strong></p>
 				<p className={ classes['Car-year'] }>Year: <strong>{ this.state.year }</strong></p>
-				<button type="button" onClick={ this.state.onSelectCar }>Select</button>
+				<button className={ classes['Car-select'] } type="button" onClick={ this.state.onSelectCar }>{ this.props.selected ? 'Unselect' : 'Select' }</button>
 			</div>
 		)
 	}

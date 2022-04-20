@@ -105,18 +105,16 @@ class App extends Component {
 								placeholder={ 'Car' }
 								required
 							/>
-							<br />
 							<input type="month" name="year" required />
-							<br />
 							<button type="submit">Add</button>
 						</form>
 					</div>
 
+					<hr className={ classes['App-line'] } />
+
 					{ selectedCars &&
 						<div className={ classes['App-cars-selected'] }>
-							<p>
-								<span className={ classes['App-cars-selected__title'] }>Selected Cars: </span>{ selectedCars }
-							</p>
+							<p><strong>Selected Cars: </strong>{ selectedCars }</p>
 						</div>
 					}
 
