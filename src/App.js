@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Car from './components/Car/Car';
 import Welcome from './components/Welcome/Welcome'
-import ErrorBoundary from './common/ErrorBoundary/ErrorBoundary';
+import ErrorBoundary from './components/ErrorBoundary/ErrorBoundary';
 import classes from './App.module.sass';
 
 class App extends Component {

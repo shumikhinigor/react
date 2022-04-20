@@ -1,5 +1,5 @@
 import { Component } from 'react';
-import Auxiliary from '../../common/HOC/Auxiliary';
+import Auxiliary from '../../hoc/Auxiliary';
 import classes from './Welcome.module.sass';
 
 class Welcome extends Component {
