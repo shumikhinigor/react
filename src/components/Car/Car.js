@@ -1,5 +1,6 @@
-import { Component } from "react";
-import Radium from "radium";
+import { Component } from 'react';
+import Radium from 'radium';
+import PropTypes from 'prop-types'
 import classes from './Car.module.sass'
 
 class Car extends Component {
@@ -56,6 +57,13 @@ class Car extends Component {
 			</div>
 		)
 	}
+}
+
+Car.propTypes = {
+	name: PropTypes.string.isRequired,
+	year: PropTypes.number.isRequired,
+	onSelectCar: PropTypes.func,
+	onDeleteCar: PropTypes.func
 }
 
 Car = Radium(Car)
