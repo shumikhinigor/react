@@ -1,5 +1,6 @@
 import Welcome from './Welcome/Welcome'
 import Car from './Car/Car';
+import ErrorBoundary from "./ErrorBoundary/ErrorBoundary";
 import classes from './App.module.sass';
 import { Component } from "react";
 
@@ -70,14 +71,17 @@ class App extends Component {
 	render() {
 		const { cars } = this.state
 		const selectedCars = cars.filter(car => car.selected).map(({ name }) => name).join(', ')
-		const listCars = cars.map(car => <Car
-			key={ car.id.toString() }
-			name={ car.name }
-			year={ car.year }
-			selected={ car.selected }
-			onSelectCar={ this.onClickSelectCarHandler.bind(this, car) }
-			onDeleteCar={ this.onClickDeleteCarHandler.bind(this, car) }
-		/>)
+		const listCars = cars.map(car =>
+			<ErrorBoundary key={ car.id.toString() }>
+				<Car
+					name={ car.name }
+					year={ car.year }
+					selected={ car.selected }
+					onSelectCar={ this.onClickSelectCarHandler.bind(this, car) }
+					onDeleteCar={ this.onClickDeleteCarHandler.bind(this, car) }
+				/>
+			</ErrorBoundary>
+		)
 
 		return (
 			<div className={ classes.App }>

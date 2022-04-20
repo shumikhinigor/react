@@ -13,7 +13,35 @@ class Car extends Component {
 		}
 	}
 
+	static getDerivedStateFromProps(nextProps, prevState) {
+		console.log('getDerivedStateFromProps')
+		return prevState
+	}
+
+	componentDidMount() {
+		console.log('componentDidMount')
+	}
+
+	shouldComponentUpdate(nextProps, nextState, nextContext) {
+		console.log('shouldComponentUpdate')
+		return true
+	}
+	getSnapshotBeforeUpdate(prevProps, prevState) {
+		console.log('getSnapshotBeforeUpdate')
+		return prevState
+	}
+	componentDidUpdate(prevProps, prevState, snapshot) {
+		console.log('componentDidUpdate')
+	}
+
+	componentWillUnmount() {
+		console.log('componentWillUnmount')
+	}
+
 	render() {
+		// Error Boundary
+		// if (Math.random() > 0.7) throw new Error('Car random failed')
+
 		const carClasses = [ classes.Car ]
 		if (this.props.selected) carClasses.push(classes['Car-selected'])
 		// Radium :hover
