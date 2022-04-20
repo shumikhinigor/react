@@ -1,8 +1,8 @@
-import Welcome from './components/Welcome/Welcome'
+import { Component } from "react";
 import Car from './components/Car/Car';
+import Welcome from './components/Welcome/Welcome'
 import ErrorBoundary from "./common/ErrorBoundary/ErrorBoundary";
 import classes from './App.module.sass';
-import { Component } from "react";
 
 class App extends Component {
 	constructor(props) {
