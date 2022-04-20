@@ -3,14 +3,14 @@ import classes from './Button.module.sass'
 
 class Button extends Component {
 	render() {
-		const ButtonClasses = [
+		const buttonClasses = [
 			classes.Button,
 			classes[this.props.type]
 		]
 		return (
 			<button
 				onClick={ this.props.onClick }
-				className={ ButtonClasses.join(' ') }
+				className={ buttonClasses.join(' ') }
 				disabled={ this.props.disabled }
 			>
 				{ this.props.children }

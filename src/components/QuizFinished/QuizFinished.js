@@ -14,7 +14,7 @@ class QuizFinished extends Component {
 				<ul>
 					{
 						this.props.quiz.map((quizItem, index) => {
-							const IconClasses = [
+							const iconClasses = [
 								'fa',
 								this.props.results[quizItem.id] === 'error' ? 'fa-times' : 'fa-check',
 								classes[this.props.results[quizItem.id]]
@@ -23,7 +23,7 @@ class QuizFinished extends Component {
 								<li key={ quizItem.id }>
 									<strong>{ index + 1 }</strong>. &nbsp;
 									{ quizItem.question }
-									<i className={ IconClasses.join(' ') } />
+									<i className={ iconClasses.join(' ') } />
 								</li>
 							)
 						})

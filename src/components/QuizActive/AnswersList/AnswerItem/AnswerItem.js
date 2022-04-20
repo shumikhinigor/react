@@ -3,12 +3,12 @@ import classes from './AnswerItem.module.sass'
 
 class AnswerItem extends Component {
 	render() {
-		const AnswerItemClasses = [ classes.AnswerItem ]
-		if (this.props.state) AnswerItemClasses.push(classes[this.props.state])
+		const answerItemClasses = [ classes.AnswerItem ]
+		if (this.props.state) answerItemClasses.push(classes[this.props.state])
 
 		return (
 			<li
-				className={ AnswerItemClasses.join(' ') }
+				className={ answerItemClasses.join(' ') }
 				onClick={ () => this.props.onClickAnswer(this.props.answer.id) }
 			>
 				{ this.props.answer.text }
