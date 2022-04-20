@@ -8,12 +8,17 @@ class QuizActive extends Component {
 			<div className={ classes.QuizActive }>
 				<p className={ classes.Question }>
 					<span>
-						<strong>1.</strong>&nbsp;How are you?
+						<strong>{ this.props.answerNumber }.</strong>&nbsp;
+						{ this.props.question }
 					</span>
-					<small>4 из 12</small>
+					<small>{ this.props.answerNumber } из { this.props.quizLength }</small>
 				</p>
 
-				<AnswersList answers={ this.props.answers }/>
+				<AnswersList
+					state={ this.props.state }
+					answers={ this.props.answers }
+					onClickAnswer={ this.props.onClickAnswer }
+				/>
 			</div>
 		)
 	}

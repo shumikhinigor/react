@@ -4,7 +4,14 @@ import AnswerItem from './AnswerItem/AnswerItem';
 
 class AnswersList extends Component {
 	render() {
-		const answers = this.props.answers.map((answer, index) => <AnswerItem key={ index } answer={ answer } />)
+		const answers = this.props.answers.map(answer =>
+			<AnswerItem
+				key={ answer.id }
+				answer={ answer }
+				onClickAnswer={ this.props.onClickAnswer }
+				state={ this.props.state ? this.props.state[answer.id] : null }
+			/>
+		)
 		return (
 			<ul className={ classes.AnswersList }>
 				{ answers }
