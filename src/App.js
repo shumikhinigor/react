@@ -1,6 +1,6 @@
-import Welcome from './Welcome/Welcome'
-import Car from './Car/Car';
-import ErrorBoundary from "./ErrorBoundary/ErrorBoundary";
+import Welcome from './components/Welcome/Welcome'
+import Car from './components/Car/Car';
+import ErrorBoundary from "./common/ErrorBoundary/ErrorBoundary";
 import classes from './App.module.sass';
 import { Component } from "react";
 
