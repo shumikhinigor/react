@@ -11,7 +11,7 @@ class QuizActive extends Component {
 						<strong>{ this.props.answerNumber }.</strong>&nbsp;
 						{ this.props.question }
 					</span>
-					<small>{ this.props.answerNumber } из { this.props.quizLength }</small>
+					<small>{ this.props.answerNumber } of { this.props.quizLength }</small>
 				</p>
 
 				<AnswersList
