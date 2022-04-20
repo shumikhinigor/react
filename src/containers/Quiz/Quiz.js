@@ -7,7 +7,8 @@ class Quiz extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			isFinished: true,
+			results: {}, // { [id]: 'success || error }
+			isFinished: false,
 			activeQuestions: 0,
 			answerState: null, // { [id]: 'success || error' }
 			quiz: [
@@ -38,16 +39,17 @@ class Quiz extends Component {
 	}
 
 	onClickAnswerHandler = answerId => {
-		const { quiz, activeQuestions, answerState } = this.state
+		const { quiz, activeQuestions, answerState, results } = this.state
+		const question = quiz[activeQuestions]
 
 		if (answerState) {
 			const key = Object.keys(answerState)[0]
 			if (answerState[key] === 'success') return
 		}
 
-		const question = quiz[activeQuestions]
 		if (question.correctAnswerId === answerId) {
-			this.setState({ answerState: { [answerId]: 'success' } })
+			if (!results[question.id]) results[question.id] = 'success'
+			this.setState({ answerState: { [answerId]: 'success' }, results })
 			const timeout = setTimeout(() => {
 				if (this.isQuizFinished()) this.setState({ isFinished: true })
 				else this.setState({ activeQuestions: activeQuestions + 1, answerState: null })
@@ -55,13 +57,22 @@ class Quiz extends Component {
 				clearTimeout(timeout)
 			}, 1000)
 		} else {
-			this.setState({ answerState: { [answerId]: 'error' } })
+			results[question.id] = 'error'
+			this.setState({ answerState: { [answerId]: 'error' }, results })
 		}
 	}
-
 	isQuizFinished = () => {
 		return this.state.activeQuestions + 1 === this.state.quiz.length
 	}
+	onClickRepeatHandler = () => {
+		this.setState({
+			activeQuestions: 0,
+			answerState: null,
+			isFinished: false,
+			results: {}
+		})
+	}
+
 
 	render() {
 		return (
@@ -72,7 +83,9 @@ class Quiz extends Component {
 					{
 						this.state.isFinished
 							? <QuizFinished
-
+								results={ this.state.results }
+								quiz={ this.state.quiz }
+								onClickRepeat={ this.onClickRepeatHandler }
 							/>
 							: <QuizActive
 								answers={ this.state.quiz[this.state.activeQuestions].answers }
