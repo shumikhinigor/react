@@ -1,10 +1,14 @@
-import React from "react";
+import { Component } from 'react'
+import Layout from './hoc/Layout/Layout'
+import Quiz from './containers/Quiz/Quiz'
 
-class App extends React.Component {
+class App extends Component {
 	render() {
 		return (
 			<div className="App">
-				<h1>Hello, React!</h1>
+				<Layout>
+					<Quiz />
+				</Layout>
 			</div>
 		)
 	}
