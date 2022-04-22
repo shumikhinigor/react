@@ -8,13 +8,13 @@ class Navigation extends Component {
 			<nav className={ classes.Navigation }>
 				<ul>
 					<li>
-						<NavLink to="/">Home</NavLink>
+						<NavLink to="/" exact="true">Home</NavLink>
 					</li>
 					<li>
 						<NavLink to="/about">About</NavLink>
 					</li>
 					<li>
-						<NavLink to="/cars">Cars</NavLink>
+						<NavLink to={{ pathname: '/cars', search: '?loaded=true' }}>Cars</NavLink>
 					</li>
 				</ul>
 			</nav>

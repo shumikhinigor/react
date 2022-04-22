@@ -2,6 +2,8 @@ import React, { Component } from 'react'
 import ErrorBoundary from '../../components/ErrorBoundary/ErrorBoundary'
 import Car from '../../components/Car/Car'
 import classes from './Cars.module.sass'
+import withRouter from '../../hoc/withRouter'
+import Auxiliary from '../../hoc/Auxiliary'
 
 class Cars extends Component {
 	constructor(props) {
@@ -40,14 +42,16 @@ class Cars extends Component {
 		})
 		this.setState({ cars })
 	}
-	onClickSelectCarHandler = selectedCar => {
+	onClickSelectCarHandler = (selectedCar, event) => {
+		event.stopPropagation()
 		const cars = this.state.cars.map(car => {
 			car.selected = car.id === selectedCar.id ? car.selected = !car.selected : car.selected
 			return car
 		})
 		this.setState({ cars })
 	}
-	onClickDeleteCarHandler = deletedCar => {
+	onClickDeleteCarHandler = (deletedCar, event) => {
+		event.stopPropagation()
 		const cars = this.state.cars.filter(car => car.id !== deletedCar.id)
 		this.setState({ cars })
 	}
@@ -106,25 +110,30 @@ class Cars extends Component {
 					</form>
 				</div>
 
-				<hr className={ classes['Cars-line'] } />
+				{ listCars.length
+					? <Auxiliary>
+						<hr className={ classes['Cars-line'] } />
 
-				{ selectedCars &&
-					<div className={ classes['Cars-selected'] }>
-						<p><strong>Selected Cars: </strong>{ selectedCars }</p>
-					</div>
+						{ selectedCars.length
+							? <div className={ classes['Cars-selected'] }>
+								<p><strong>Selected Cars: </strong>{ selectedCars }</p>
+							</div>
+							: null
+						}
+
+						<div className={ classes['Cars-list'] }>
+							{ listCars }
+						</div>
+
+						<button onClick={ this.onClickClearSelectedCarsHandler } disabled={ !selectedCars }>Clear selected cars</button>
+					</Auxiliary>
+					: null
 				}
 
-				{ listCars &&
-					<div className={ classes['Cars-list'] }>
-						{ listCars }
-					</div>
-				}
-
-				<button onClick={ this.onClickClearSelectedCarsHandler } disabled={ !selectedCars.length }>Clear selected cars</button>
 			</div>
 		)
 
 	}
 }
 
-export default Cars
+export default withRouter(Cars)

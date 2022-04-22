@@ -1,7 +1,8 @@
 import { Component } from 'react';
+import classes from './Car.module.sass'
 import Radium from 'radium';
 import PropTypes from 'prop-types'
-import classes from './Car.module.sass'
+import withRouter from '../../hoc/withRouter'
 
 class Car extends Component {
 	constructor(props) {
@@ -50,7 +51,11 @@ class Car extends Component {
 		const hover = { ':hover': { boxShadow: this.props.selected ? '0px 3px 5px #61DAFB' : '0px 3px 5px white' } }
 
 		return (
-			<div className={ carClasses.join(' ') } style={ hover }>
+			<div
+				className={ carClasses.join(' ') }
+				style={ hover }
+				onClick={ () => this.props.navigate(this.props.name.toLowerCase()) }
+			>
 				<button className={ classes['Car-delete'] } type="button" onClick={ this.state.onDeleteCar } />
 				<p className={ classes['Car-name'] }>Сar name: <strong>{ this.state.name }</strong></p>
 				<p className={ classes['Car-year'] }>Year: <strong>{ this.state.year }</strong></p>
@@ -69,4 +74,4 @@ Car.propTypes = {
 
 Car = Radium(Car)
 
-export default Car
+export default withRouter(Car)
