@@ -7,7 +7,6 @@ class Home extends Component {
 		return (
 			<div className={ classes.Home }>
 				<Welcome />
-				<h1>Home page</h1>
 			</div>
 		)
 	}
