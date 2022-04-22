@@ -4,13 +4,16 @@ import classes from './Navigation.module.sass'
 class Navigation extends Component {
 	render() {
 		return (
-			<nav>
+			<nav className={ classes.Navigation }>
 				<ul>
 					<li>
 						<a href="/">Home</a>
 					</li>
 					<li>
-						<a href="/">About</a>
+						<a href="/about">About</a>
+					</li>
+					<li>
+						<a href="/cars">Cars</a>
 					</li>
 				</ul>
 			</nav>
