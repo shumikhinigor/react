@@ -1,10 +1,12 @@
+@import '../../styles/variables'
+
 .Navigation
 	display: flex
 	align-items: center
 	justify-content: flex-end
 	padding: 20px
 	width: 100%
-	background-color: #ffffff
+	background-color: $light
 	min-height: 80px
 	& ul
 		list-style: none
@@ -17,8 +19,8 @@
 		& li
 			font-size: calc(10px + 2vmin)
 			& a
-				color: #000000
+				color: $dark
 				transition: all .2s
 				text-decoration: none
 				&:hover, &[aria-current="page"]
-					color: #61DAFB
+					color: $primary

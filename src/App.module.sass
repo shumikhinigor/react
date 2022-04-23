@@ -1,10 +1,12 @@
+@import './styles/variables'
+
 .App
     text-align: center
     &-logo
         height: 40vmin
         pointer-events: none
     &-main
-        background-color: #282c34
+        background-color: $secondary
         min-height: calc(100vh - 80px)
         display: flex
         flex-direction: column
@@ -14,7 +16,7 @@
         color: white
         padding: 20px
     &-link
-        color: #61dafb
+        color: $primary
 
 @media (prefers-reduced-motion: no-preference)
     .App
