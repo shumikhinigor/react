@@ -1,1 +1,21 @@
+@import '../../styles/variables'
+
 .Auth
+	display: flex
+	justify-content: center
+	padding-top: 100px
+	flex-grow: 1
+	width: 100%
+	background: linear-gradient(90deg, darken($success, 20%) 0%, $success 100%)
+	& > div
+		width: 100%
+		max-width: 600px
+		padding: 0 20px
+	& h1
+		color: $light
+		text-align: center
+	&-form
+		background: $secondary
+		box-shadow: 2px 2px 2px transparentize($dark, .5)
+		padding: 15px
+		border-radius: 5px
