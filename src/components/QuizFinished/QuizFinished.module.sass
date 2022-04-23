@@ -1,7 +1,9 @@
+@import '../../styles/variables'
+
 .QuizFinished
 	padding: 20px
-	color: #ffffff
-	border: 1px solid #ffffff
+	color: $light
+	border: 1px solid $light
 	border-radius: 5px
 	box-sizing: border-box
 	& ul
@@ -12,6 +14,6 @@
 			& i
 				margin-left: 10px
 				&.success
-					color: rgba(161, 240, 69, .7)
+					color: transparentize($success, .3)
 				&.error
-					color: rgba(240, 87, 108, .7)
+					color: transparentize($danger, .3)

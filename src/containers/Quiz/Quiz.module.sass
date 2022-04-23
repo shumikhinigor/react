@@ -1,11 +1,13 @@
+@import '../../styles/variables'
+
 .Quiz
 	display: flex
 	justify-content: center
 	padding-top: 100px
 	flex-grow: 1
 	width: 100%
-	background: linear-gradient(90deg, #00a7fa 0%, #61DAFB 100%)
+	background: linear-gradient(90deg, darken($primary, 20%) 0%, $primary 100%)
 	& h1
-		color: #ffffff
+		color: $light
 	& .Wrapper
 		width: 600px

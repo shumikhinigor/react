@@ -1,13 +1,15 @@
+@import '../../../../styles/variables'
+
 .AnswerItem
-	border: 1px solid #ffffff
+	border: 1px solid $light
 	border-radius: 5px
 	padding: 5px 10px
 	margin-bottom: 5px
 	cursor: pointer
 	&:hover
-		background: rgba(255, 255, 255, .2)
+		background: transparentize($light, .8)
 		transition: background .3s ease-in-out
 	&.success
-		background: rgba(161, 240, 69, .7)
+		background: transparentize($success, .3)
 	&.error
-		background: rgba(240, 87, 108, .7)
+		background: transparentize($danger, .3)

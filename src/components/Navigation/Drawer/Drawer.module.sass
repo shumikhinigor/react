@@ -1,3 +1,5 @@
+@import '../../../styles/variables'
+
 .Drawer
 	position: fixed
 	top: 0
@@ -7,7 +9,7 @@
 	max-width: 300px
 	padding: 20px 10px
 	box-sizing: border-box
-	background: #ffffff
+	background: $light
 	transform: translateX(0px)
 	transition: transform .2s ease-in
 	z-index: 90
@@ -20,10 +22,10 @@
 		& li
 			margin-bottom: 15px
 			& a
-				color: #363d54
+				color: $secondary
 				font-size: 30px
 				text-decoration: none
-				background-color: #ffffff
+				background-color: $light
 				position: relative
 				padding: 0 20px 10px 20px
 				transition: opacity .3s
