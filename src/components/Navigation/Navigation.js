@@ -8,7 +8,7 @@ class Navigation extends Component {
 			<nav className={ classes.Navigation }>
 				<ul>
 					<li>
-						<NavLink to="/" exact="true">Home</NavLink>
+						<NavLink to="/">Home</NavLink>
 					</li>
 					<li>
 						<NavLink to="/about">About</NavLink>
