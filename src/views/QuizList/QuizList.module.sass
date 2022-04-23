@@ -1,1 +1,25 @@
+@import '../../styles/variables'
+
 .QuizList
+	display: flex
+	justify-content: center
+	padding-top: 100px
+	flex-grow: 1
+	width: 100%
+	background: linear-gradient(90deg, darken($danger, 20%) 0%, $danger 100%)
+	& h1
+		color: $light
+	& ul
+		list-style: none
+		margin: 0
+		padding: 0
+		& li
+			margin-bottom: 10px
+			&:last-child
+				margin-bottom: 0
+			& a
+				color: $light
+				text-decoration: none
+				transition: all .2s
+				&:hover
+					color: transparentize($light, .3)

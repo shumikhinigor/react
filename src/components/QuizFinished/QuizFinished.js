@@ -1,6 +1,7 @@
 import React, { Component } from 'react'
 import classes from './QuizFinished.module.sass'
 import Button from '../UI/Button/Button'
+import { Link } from 'react-router-dom'
 
 class QuizFinished extends Component {
 	render() {
@@ -34,7 +35,9 @@ class QuizFinished extends Component {
 
 				<div>
 					<Button type={ 'primary' } onClick={ this.props.onClickRepeat }>Repeat</Button>
-					<Button type={ 'success' }>Go to test list</Button>
+					<Link to={ '/' }>
+						<Button type={ 'success' }>Go to test list</Button>
+					</Link>
 				</div>
 			</div>
 		)
