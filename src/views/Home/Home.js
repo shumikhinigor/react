@@ -1,4 +1,4 @@
-import { Component } from 'react'
+import React, { Component } from 'react'
 import classes from './Home.module.sass'
 import Welcome from '../../components/Welcome/Welcome'
 import logo from '../../logo.svg'

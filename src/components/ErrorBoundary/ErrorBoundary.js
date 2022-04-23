@@ -1,4 +1,4 @@
-import { Component } from "react";
+import React, { Component } from "react";
 import classes from './ErrorBoundary.module.sass'
 
 class ErrorBoundary extends Component {

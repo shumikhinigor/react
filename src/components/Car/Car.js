@@ -1,4 +1,4 @@
-import { Component } from 'react';
+import React, { Component } from 'react';
 import classes from './Car.module.sass'
 import Radium from 'radium';
 import PropTypes from 'prop-types'

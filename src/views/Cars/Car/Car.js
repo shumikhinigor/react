@@ -1,4 +1,4 @@
-import { Component } from 'react'
+import React, { Component } from 'react'
 import classes from './Car.module.sass'
 import withRouter from '../../../hoc/withRouter'
 

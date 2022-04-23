@@ -1,4 +1,4 @@
-import { Component } from 'react'
+import React, { Component } from 'react'
 import classes from './Navigation.module.sass'
 import { NavLink } from 'react-router-dom'
 
