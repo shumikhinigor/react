@@ -1,4 +1,4 @@
-import { Component } from 'react'
+import React, { Component } from 'react'
 import classes from './QuizFinished.module.sass'
 import Button from '../UI/Button/Button'
 

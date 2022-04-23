@@ -29,5 +29,8 @@
 				position: relative
 				padding: 0 20px 10px 20px
 				transition: opacity .3s
-				&:hover, &:active
-					opacity: .7
+				&[aria-current="page"]
+					color: $primary
+				&:not([aria-current="page"])
+					&:hover, &:active
+						opacity: .7

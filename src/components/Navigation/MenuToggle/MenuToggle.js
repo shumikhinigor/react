@@ -1,4 +1,4 @@
-import { Component } from 'react'
+import React, { Component } from 'react'
 import classes from './MenuToggle.module.sass'
 
 class MenuToggle extends Component {

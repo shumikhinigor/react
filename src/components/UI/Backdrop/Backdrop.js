@@ -1,4 +1,4 @@
-import { Component } from 'react'
+import React, { Component } from 'react'
 import classes from './Backdrop.module.sass'
 
 class Backdrop extends Component {

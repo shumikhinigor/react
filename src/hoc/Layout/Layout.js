@@ -1,4 +1,4 @@
-import { Component } from 'react'
+import React, { Component } from 'react'
 import classes from './Layout.module.sass'
 import MenuToggle from '../../components/Navigation/MenuToggle/MenuToggle'
 import Drawer from '../../components/Navigation/Drawer/Drawer'
@@ -13,7 +13,7 @@ class Layout extends Component {
 	onToggleMenuHandler = () => {
 		this.setState({ isOpenMenu: !this.state.isOpenMenu })
 	}
-	onClickBackdropHandler = () => {
+	onCloseHandler = () => {
 		this.setState({ isOpenMenu: false })
 	}
 
@@ -22,7 +22,7 @@ class Layout extends Component {
 			<div className={ classes.Layout }>
 				<Drawer
 					isOpen={ this.state.isOpenMenu }
-					onClickBackdrop={ this.onClickBackdropHandler }
+					onClose={ this.onCloseHandler }
 				/>
 				<MenuToggle
 					onToggle={ this.onToggleMenuHandler }

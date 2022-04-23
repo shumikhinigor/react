@@ -1,4 +1,4 @@
-import { Component } from 'react'
+import React, { Component } from 'react'
 import classes from './Button.module.sass'
 
 class Button extends Component {

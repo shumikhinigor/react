@@ -1,4 +1,4 @@
-import { Component } from 'react'
+import React, { Component } from 'react'
 import classes from './QuizActive.module.sass'
 import AnswersList from './AnswersList/AnswersList'
 

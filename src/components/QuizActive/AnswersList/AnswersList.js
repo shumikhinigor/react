@@ -1,4 +1,4 @@
-import { Component } from 'react'
+import React, { Component } from 'react'
 import classes from './AnswersList.module.sass'
 import AnswerItem from './AnswerItem/AnswerItem'
 

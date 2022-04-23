@@ -1,12 +1,17 @@
-import { Component, Fragment } from 'react'
+import React, { Component, Fragment } from 'react'
 import classes from './Drawer.module.sass'
 import Backdrop from '../../UI/Backdrop/Backdrop'
+import { NavLink } from 'react-router-dom'
 
 class Drawer extends Component {
 	constructor(props) {
 		super(props)
 		this.state = {
-			links: [1, 2, 3]
+			links: [
+				{ id: 1, to: '/', label: 'List' },
+				{ id: 2, to: '/auth', label: 'Authorization' },
+				{ id: 3, to: '/quiz-creator', label: 'Create test' }
+			]
 		}
 	}
 
@@ -14,13 +19,14 @@ class Drawer extends Component {
 		const drawerClasses = [ classes.Drawer ]
 		if (!this.props.isOpen) drawerClasses.push(classes.close)
 
-		const links = this.state.links.map((link, index) => {
-			return (
-				<li key={ index }>
-					<a>Link { link }</a>
-				</li>
-			)
-		})
+		const links = this.state.links.map(link => (
+			<li key={ link.id }>
+				<NavLink
+					to={ link.to }
+					onClick={ this.props.onClose }
+				>{ link.label }</NavLink>
+			</li>
+		))
 
 		return (
 			<Fragment>
@@ -29,7 +35,7 @@ class Drawer extends Component {
 						{ links }
 					</ul>
 				</nav>
-				{ this.props.isOpen && <Backdrop onClick={ this.props.onClickBackdrop } /> }
+				{ this.props.isOpen && <Backdrop onClick={ this.props.onClose } /> }
 			</Fragment>
 		)
 	}
