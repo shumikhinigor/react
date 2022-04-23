@@ -1,6 +1,6 @@
 import { Component } from 'react'
 import classes from './QuizActive.module.sass'
-import AnswersList from './AnswersList/AnswersList';
+import AnswersList from './AnswersList/AnswersList'
 
 class QuizActive extends Component {
 	render() {

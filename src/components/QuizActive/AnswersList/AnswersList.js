@@ -1,6 +1,6 @@
 import { Component } from 'react'
 import classes from './AnswersList.module.sass'
-import AnswerItem from './AnswerItem/AnswerItem';
+import AnswerItem from './AnswerItem/AnswerItem'
 
 class AnswersList extends Component {
 	render() {

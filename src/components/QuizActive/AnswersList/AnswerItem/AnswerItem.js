@@ -1,5 +1,6 @@
 import { Component } from 'react'
 import classes from './AnswerItem.module.sass'
+import withRouter from '../../../../hoc/withRouter'
 
 class AnswerItem extends Component {
 	render() {
@@ -17,4 +18,4 @@ class AnswerItem extends Component {
 	}
 }
 
-export default AnswerItem
+export default withRouter(AnswerItem)
