@@ -3,9 +3,22 @@ import classes from './Input.module.sass'
 
 class Input extends Component {
 
+	constructor(props) {
+		super(props)
+
+		this.state = {
+			isTouched: false
+		}
+	}
+
+	onChange = event => {
+		this.setState({ isTouched: true })
+		this.props.onChange(event)
+	}
 	isInvalid = () => {
-		const { valid, touched, shouldValidate } = this.props
-		return !valid && shouldValidate && touched
+		const { isTouched } = this.state
+		const { valid, shouldValidate } = this.props
+		return isTouched && (!valid && shouldValidate)
 	}
 
 	render() {
@@ -16,7 +29,7 @@ class Input extends Component {
 		const classesInput = [ classes.Input ]
 		const htmlFor = `${ type }-${ Math.random() }`
 
-		// classesInput.push(classes['Input-invalid'])
+		if (this.isInvalid()) classesInput.push(classes['Input-invalid'])
 
 		return (
 			<div className={ classesInput.join(' ') }>
@@ -25,7 +38,7 @@ class Input extends Component {
 					type={ type }
 					id={ htmlFor }
 					value={ value }
-					onChange={ this.props.onChange }
+					onChange={ this.onChange }
 				/>
 
 				{ this.isInvalid()
