@@ -5,16 +5,6 @@ import PropTypes from 'prop-types'
 import withRouter from '../../hoc/withRouter'
 
 class Car extends Component {
-	constructor(props) {
-		super(props)
-		this.state = {
-			name: props.name || 'Car',
-			year: props.year || 'Not specified',
-			onSelectCar: props.onSelectCar,
-			onDeleteCar: props.onDeleteCar
-		}
-	}
-
 	// Lifecycle
 	static getDerivedStateFromProps(nextProps, prevState) {
 		console.log('getDerivedStateFromProps')
@@ -56,10 +46,10 @@ class Car extends Component {
 				style={ hover }
 				onClick={ () => this.props.navigate(this.props.name.toLowerCase()) }
 			>
-				<button className={ classes['Car-delete'] } type="button" onClick={ this.state.onDeleteCar } />
-				<p className={ classes['Car-name'] }>Сar name: <strong>{ this.state.name }</strong></p>
-				<p className={ classes['Car-year'] }>Year: <strong>{ this.state.year }</strong></p>
-				<button className={ classes['Car-select'] } type="button" onClick={ this.state.onSelectCar }>{ this.props.selected ? 'Unselect' : 'Select' }</button>
+				<button className={ classes['Car-delete'] } type="button" onClick={ this.props.onDeleteCar } />
+				<p className={ classes['Car-name'] }>Сar name: <strong>{ this.props.name || 'Car' }</strong></p>
+				<p className={ classes['Car-year'] }>Year: <strong>{ this.props.year || 'Not specified' }</strong></p>
+				<button className={ classes['Car-select'] } type="button" onClick={ this.props.onSelectCar }>{ this.props.selected ? 'Unselect' : 'Select' }</button>
 			</div>
 		)
 	}

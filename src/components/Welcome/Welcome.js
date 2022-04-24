@@ -3,15 +3,11 @@ import Auxiliary from '../../hoc/Auxiliary';
 import classes from './Welcome.module.sass';
 
 class Welcome extends Component {
-	constructor(props) {
-		super(props)
-		this.state = { name: props.name || 'Guest' }
-	}
 	render() {
 		return (
 			<Auxiliary>
 				<h2 className={ classes.Welcome }>
-					Welcome, { this.state.name }
+					Welcome, { this.props.name || 'Guest' }
 				</h2>
 			</Auxiliary>
 		)
